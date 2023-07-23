@@ -49,7 +49,7 @@ def main():
         chunks = text_splitter.split_text(text)
 
         # Criar embeddings usando o modelo OpenAI
-        embeddings = OpenAIEmbeddings(api_key)  # Usando a API key inserida pelo usuário
+        embeddings = OpenAIEmbeddings(api_key=api_key)  # Corrigindo o uso da API key
         knowledge_base = FAISS.from_texts(chunks, embeddings)
 
         # Entrada do usuário para fazer uma pergunta ao PDF
@@ -60,7 +60,7 @@ def main():
             docs = knowledge_base.similarity_search(user_question)
 
             # Carregar o modelo de perguntas e respostas da OpenAI
-            llm = OpenAI(api_key)  # Usando a mesma API key inserida anteriormente
+            llm = OpenAI(api_key=api_key)  # Corrigindo o uso da API key
             chain = load_qa_chain(llm, chain_type="stuff")
 
             # Executar o modelo com a pergunta do usuário e obter a resposta
@@ -74,4 +74,4 @@ def main():
 # Executar a função principal quando o script é executado diretamente
 if __name__ == '__main__':
     main()
-    
+
