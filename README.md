@@ -50,7 +50,7 @@ Certifique-se de que todas as dependências estão instaladas corretamente, conf
 
 Execute o código do aplicativo usando o seguinte comando:
 
-`streamlit run nome_do_arquivo.py`
+`streamlit run openAIchatPDFv1_main_.py`
 
 O aplicativo será aberto em seu navegador padrão.
 
