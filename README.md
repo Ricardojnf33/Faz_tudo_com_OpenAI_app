@@ -64,7 +64,7 @@ Divirta-se trocando ideias com o seu PDF!
 
 Espero que você tenha uma experiência agradável e proveitosa utilizando o aplicativo "Trocando uma Ideia com Meu PDF". Sinta-se à vontade para explorar diferentes PDFs e fazer várias perguntas interessantes.
 
-Este aplicativo foi desenvolvido com muito carinho e dedicação por mim para tentar melhorar um pouco a sua produtividade com I.A. de ponta, mas claro, pagando uns centavinhos de dólar para cada pergunta respondida pela OpenAI. Caso encontre algum problema, tenha alguma sugestão de melhoria ou queira contribuir com o projeto, sinta-se à vontade para abrir uma "issue" ou enviar um "pull request" no repositório do GitHub.
+Este aplicativo foi desenvolvido com muito carinho e dedicação por mim para tentar melhorar um pouco a sua produtividade com I.A. de ponta, mas claro, pagando uns centavinhos de dólar para cada pergunta respondida pela OpenAI, não se esqueça de alterar o arquivo `.env` com sua Chave_API da OpenAI. Caso encontre algum problema, tenha alguma sugestão de melhoria ou queira contribuir com o projeto, sinta-se à vontade para abrir uma "issue" ou enviar um "pull request" no repositório do GitHub.
 
 Divulgue este projeto para seus amigos, colegas e redes sociais para que mais pessoas possam ter acesso a essa ferramenta divertida e informativa.
 
