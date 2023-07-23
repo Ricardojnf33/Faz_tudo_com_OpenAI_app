@@ -24,6 +24,11 @@ def main():
     st.sidebar.header("Configurações")
     api_key = st.sidebar.text_input("Insira sua API key da OpenAI", type="password")
 
+    # Verificar se o usuário inseriu uma API key
+    if not api_key:
+        st.sidebar.warning("Por favor, insira sua API key da OpenAI.")
+        st.stop()
+
     # Upload do arquivo PDF
     pdf = st.file_uploader("Carregue aqui seu PDF", type="pdf")
 
