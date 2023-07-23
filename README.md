@@ -1,7 +1,3 @@
-# Arquitetura
-
-![Logo do Aplicativo](ChatPDF_Arquitetura.png)
-
 # README - Trocando uma Ideia com Meu PDF V1
 
 Troque uma ideia com seu PDF
