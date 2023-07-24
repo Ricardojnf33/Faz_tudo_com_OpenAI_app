@@ -22,7 +22,6 @@ st.title("🔎 LangChain - Chat com busca")
 # Introdução do aplicativo
 """
 Neste exemplo, estamos usando o `StreamlitCallbackHandler` para exibir os pensamentos e ações de um agente em um aplicativo interativo do Streamlit.
-Experimente mais exemplos de Agentes LangChain 🤝 Streamlit em [github.com/langchain-ai/streamlit-agent](https://github.com/langchain-ai/streamlit-agent).
 """
 
 # Verifica se a lista de mensagens está no estado da sessão, caso não esteja, inicia com uma mensagem do assistente
