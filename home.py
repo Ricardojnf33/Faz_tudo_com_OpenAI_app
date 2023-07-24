@@ -43,14 +43,4 @@ st.sidebar.markdown('### Powered by Cheetah Data Science')
 
 st.write("# App faz tudo com OpenAI, só alguns centavinhos de dólar por interação!")
 
-# Opções para exibir os códigos
-code_options = {
-    "Chatbot": load_chatbot_code,
-    "Chat com DataFrames": load_chat_with_df_code,
-    "Chat com PDFs": load_chat_with_pdf_code,
-    "Chat com Busca": load_chat_with_search_code
-}
-
-selected_code = st.selectbox("Escolha o código para exibir:", list(code_options.keys()))
-
-st.code(code_options[selected_code](), language="python")
+st.write("## Escolha entre as ferramentas a sua esquerda!")
