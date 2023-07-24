@@ -50,7 +50,7 @@ Com apenas algumas linhas de código Python e uma chave de API, é possível cri
 
 O aplicativo completo está hospedado em https://faztudocom-openai-app.streamlit.app/ para teste ao vivo. O código-fonte está disponível no GitHub para referência e customização.
 
-Agradecemos por usar o "Trocando uma Ideia com Meu PDF". Divirta-se e boas descobertas!
+Agradecemos por usar o "Faz Tudo com OpenAI app". Divirta-se e boas descobertas!
 
 <img src="cheetah_data_science.png" alt="Logo do Aplicativo" width="200">
 
