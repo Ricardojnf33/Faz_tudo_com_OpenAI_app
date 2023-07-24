@@ -1,72 +1,47 @@
-# README - Trocando uma Ideia com Meu PDF V1
+# README - Trocando uma Ideia com Meu PDF V2
 
-Troque uma ideia com seu PDF
+Este é um aplicativo desenvolvido com o framework Streamlit que permite ao usuário fazer perguntas a respeito de um arquivo PDF carregado. O aplicativo utiliza o modelo de perguntas e respostas da OpenAI para encontrar respostas relevantes no texto do PDF. Abaixo estão os passos detalhados para executar o aplicativo em sua própria máquina:
 
-Bem-vindo(a) ao aplicativo "Trocando uma Ideia com Meu PDF"! Este é um aplicativo desenvolvido com o intuito de permitir que você interaja e faça perguntas sobre o conteúdo de um arquivo PDF. De forma descontraída e inovadora, você poderá extrair informações relevantes do seu PDF e ter uma experiência única de aprendizado e descoberta.
+# Pré-requisitos:
 
-# Instalação
+Python 3.x instalado na máquina.
+Uma API key válida da OpenAI para acessar o modelo de perguntas e respostas.
 
-Para utilizar o aplicativo, é necessário ter o Python instalado em seu computador. Além disso, certifique-se de ter instalado os pacotes necessários para a execução do código. Você pode instalar todas as dependências utilizando o pip. Execute o seguinte comando em seu terminal:
+# Passo 1 - Instalar as bibliotecas necessárias:
 
-`pip install -r requirements.txt`
+Certifique-se de ter instalado todas as bibliotecas necessárias para executar o aplicativo. As principais bibliotecas utilizadas são: Streamlit, PyPDF2, dotenv, langchain, e FAISS. Você pode instalá-las usando o gerenciador de pacotes pip. Abra o terminal (ou prompt de comando) e execute o seguinte comando:
 
-# Como Funciona
+# Passo 2 - Obter uma API key da OpenAI:
 
-O aplicativo é construído utilizando a biblioteca Streamlit, que possibilita a criação de interfaces de usuário amigáveis em Python. Ele utiliza algumas bibliotecas para realizar o processamento do PDF, a divisão do texto em pedaços, a criação de embeddings (representações numéricas das palavras) e a busca por similaridade das perguntas feitas pelo usuário.
+Você precisará de uma API key válida da OpenAI para usar o modelo de perguntas e respostas. Caso ainda não tenha uma, siga as instruções da OpenAI para obter a sua chave de API.
 
-Aqui está uma breve explicação sobre as principais bibliotecas utilizadas no código:
+# Passo 3 - Crie um arquivo .env:
 
-# Dotenv
+`OPENAI_API_KEY=SUA_API_KEY_AQUI`
 
-O pacote `dotenv` é utilizado para carregar variáveis de ambiente a partir de um arquivo `.env`. Isso permite que informações sensíveis, como chaves de API, sejam mantidas em segurança e não sejam expostas no código.
+# Passo 4 - Execute o aplicativo:
 
-# Streamlit
+Após instalar as bibliotecas e criar o arquivo .env, você está pronto para executar o aplicativo. Abra o terminal (ou prompt de comando), navegue até o diretório onde o código do aplicativo está localizado e execute o seguinte comando:
 
-A biblioteca `streamlit` é a base do nosso aplicativo. Ela é responsável por criar a interface gráfica amigável e interativa que você verá ao executar o código. Utilizamos também a função `st.set_page_config()` para configurar o título da página.
+`streamlit run FlaubertchatPDFv4BGPT_main_.py`
 
-# PyPDF2
+# Passo 5 - Interagindo com o aplicativo:
 
-O `PyPDF2` é uma biblioteca para lidar com arquivos PDF. Neste aplicativo, utilizamos o `PdfReader` para ler o arquivo PDF carregado pelo usuário e extrair o texto contido nele.
+Após executar o comando, o aplicativo estará disponível em seu navegador web padrão. Você verá o título "Troque uma ideia com seu PDF, faça uma pergunta a respeito dele." e uma área para inserir a API key da OpenAI na barra lateral.
 
-# Langchain
+Insira sua API key da OpenAI na barra lateral e clique em "Enter".
+Carregue o arquivo PDF que deseja utilizar clicando no botão "Carregue aqui seu PDF".
+O texto do PDF será extraído automaticamente e dividido em pedaços (chunks) para processamento.
+Digite a pergunta que deseja fazer ao PDF na caixa de texto "Pergunte ao seu PDF".
+O aplicativo enviará sua pergunta para o modelo de perguntas e respostas da OpenAI e retornará a resposta relevante encontrada.
 
-Aqui é onde a mágica acontece! A biblioteca `langchain` é utilizada para processar o texto extraído do PDF e criar representações numéricas (embeddings) para as palavras presentes no texto.
+## Observações:
 
-# OpenAI
 
-Dentro do pacote `langchain`, utilizamos o módulo `OpenAI` para carregar um modelo de linguagem treinado pela OpenAI. Esse modelo é utilizado para responder perguntas baseadas nos textos do PDF.
-
-# FAISS
-
-O módulo `vectorstores` contém a classe `FAISS`, que é responsável por criar um banco de conhecimento com os embeddings das palavras. Isso possibilita uma busca eficiente por similaridade entre as perguntas do usuário e o conteúdo do PDF.
-
-#Como Usar
-
-Certifique-se de que todas as dependências estão instaladas corretamente, conforme explicado na seção de instalação.
-
-Execute o código do aplicativo usando o seguinte comando:
-
-`streamlit run openAIchatPDFv1_main_.py`
-
-O aplicativo será aberto em seu navegador padrão.
-
-Clique no botão "Carregue aqui seu PDF" e selecione o arquivo PDF que você deseja explorar.
-
-Após o carregamento do PDF, o texto será extraído automaticamente e dividido em pedaços.
-
-Digite uma pergunta relacionada ao conteúdo do PDF no campo "Pergunte ao seu PDF".
-
-Clique no botão "Perguntar" para obter a resposta com base no texto do PDF.
-
-Divirta-se trocando ideias com o seu PDF!
-
-# Considerações Finais
-
-Espero que você tenha uma experiência agradável e proveitosa utilizando o aplicativo "Trocando uma Ideia com Meu PDF". Sinta-se à vontade para explorar diferentes PDFs e fazer várias perguntas interessantes.
-
-Este aplicativo foi desenvolvido com muito carinho e dedicação por mim para tentar melhorar um pouco a sua produtividade com I.A. de ponta, mas claro, pagando uns centavinhos de dólar para cada pergunta respondida pela OpenAI, não se esqueça de alterar o arquivo `.env` com sua Chave_API da OpenAI. Caso encontre algum problema, tenha alguma sugestão de melhoria ou queira contribuir com o projeto, sinta-se à vontade para abrir uma "issue" ou enviar um "pull request" no repositório do GitHub.
-
-Divulgue este projeto para seus amigos, colegas e redes sociais para que mais pessoas possam ter acesso a essa ferramenta divertida e informativa.
+Certifique-se de que o PDF carregado contenha texto, pois o modelo de perguntas e respostas baseia-se em informações textuais.
+O aplicativo utiliza a técnica de "similarity search" para encontrar as partes relevantes do texto antes de executar a pergunta. Assim, a precisão das respostas pode depender da qualidade do texto extraído do PDF e da formulação da pergunta.
+Para encerrar a execução do aplicativo, pressione CTRL+C no terminal (ou prompt de comando) onde o aplicativo está sendo executado. Isso fechará o servidor local que o Streamlit iniciou.
+Agora você tem uma aplicação interativa que permite fazer perguntas sobre o conteúdo de um PDF usando o poderoso modelo de perguntas e respostas da OpenAI. Divirta-se explorando e interagindo com seu PDF!
 
 Agradecemos por usar o "Trocando uma Ideia com Meu PDF". Divirta-se e boas descobertas!
 
