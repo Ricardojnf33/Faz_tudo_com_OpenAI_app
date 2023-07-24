@@ -7,28 +7,28 @@ load_dotenv()
 
 st.set_page_config(
     page_title="Home",
-    page_icon="🎲",
+    page_icon="🐆",
     layout='wide'
 )
 
 # Função para carregar o código do chatbot
 def load_chatbot_code():
-    with open("chatbot.py", "r") as file:
+    with open("Pag2_SideBar_Chatbot.py", "r") as file:
         return file.read()
 
 # Função para carregar o código do chat com DataFrames
 def load_chat_with_df_code():
-    with open("chat_with_dataframe.py", "r") as file:
+    with open("pag4_LangChainChatPandas.py", "r") as file:
         return file.read()
 
 # Função para carregar o código do chat com PDFs
 def load_chat_with_pdf_code():
-    with open("chat_with_pdf.py", "r") as file:
+    with open("Pag3_openAIchatPDFv2CGPT_main_.py", "r") as file:
         return file.read()
 
 # Função para carregar o código do chat com busca
 def load_chat_with_search_code():
-    with open("chat_with_search.py", "r") as file:
+    with open("pag5_Chat_with_search.py", "r") as file:
         return file.read()
 
 st.sidebar.markdown("# Faz Tudo app")
@@ -54,4 +54,3 @@ code_options = {
 selected_code = st.selectbox("Escolha o código para exibir:", list(code_options.keys()))
 
 st.code(code_options[selected_code](), language="python")
-
