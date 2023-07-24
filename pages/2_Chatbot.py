@@ -11,8 +11,6 @@ import streamlit as st
 with st.sidebar:
     openai_api_key = st.text_input("Chave da API OpenAI", key="chatbot_api_key", type="password")
     "[Obtenha uma chave de API OpenAI](https://platform.openai.com/account/api-keys)"
-    "[Veja o código-fonte](https://github.com/streamlit/llm-examples/blob/main/Chatbot.py)"
-    "[![Abrir no GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
 # Título do aplicativo
 st.title("💬 Chatbot")
