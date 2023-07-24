@@ -1,48 +1,54 @@
-# README - Trocando uma Ideia com Meu PDF V2
+# Faz Tudo com OpenAI
 
-Este é um aplicativo desenvolvido com o framework Streamlit que permite ao usuário fazer perguntas a respeito de um arquivo PDF carregado. O aplicativo utiliza o modelo de perguntas e respostas da OpenAI para encontrar respostas relevantes no texto do PDF. Abaixo estão os passos detalhados para executar o aplicativo em sua própria máquina:
+Este é um aplicativo Streamlit que demonstra o poder da API da OpenAI por meio de 4 ferramentas interessantes:
 
-# Pré-requisitos:
+## Chatbot com GPT-3.5 Turbo
 
-Python 3.x instalado na máquina.
+A primeira ferramenta é um chatbot simples construído com a API ChatCompletion do GPT-3.5 Turbo. O usuário pode inserir uma chave de API válida na barra lateral e então conversar com o chatbot na caixa de entrada de mensagens.
 
-Uma API key válida da OpenAI para acessar o modelo de perguntas e respostas.
+O aplicativo mantém o histórico da conversa no estado da sessão do Streamlit. A cada nova mensagem do usuário, o histórico é enviado para a API ChatCompletion, que retorna uma resposta.
 
-# Passo 1 - Instalar as bibliotecas necessárias:
+O código deste chatbot está em `2_Chatbot.py`.
 
-Certifique-se de ter instalado todas as bibliotecas necessárias para executar o aplicativo. As principais bibliotecas utilizadas são: Streamlit, PyPDF2, dotenv, langchain, e FAISS. Você pode instalá-las usando o gerenciador de pacotes pip. Abra o terminal (ou prompt de comando) e execute o seguinte comando:
+## Perguntas e Respostas com PDF
 
-# Passo 2 - Obter uma API key da OpenAI:
+A segunda ferramenta permite que o usuário faça upload de um PDF e então faça perguntas sobre o conteúdo do PDF.
 
-Você precisará de uma API key válida da OpenAI para usar o modelo de perguntas e respostas. Caso ainda não tenha uma, siga as instruções da OpenAI para obter a sua chave de API.
+Primeiro, o texto do PDF é extraído usando a biblioteca PyPDF2. Em seguida, o texto é dividido em pequenos trechos usando a classe CharacterTextSplitter do LangChain.
 
-# Passo 3 - Crie um arquivo .env:
+Os trechos de texto são inseridos em um vectorstore FAISS usando embeddings do OpenAI.
 
-`OPENAI_API_KEY=SUA_API_KEY_AQUI`
+Quando o usuário faz uma pergunta, os trechos mais relevantes são recuperados do vectorstore usando a busca por similaridade.
 
-# Passo 4 - Execute o aplicativo:
+Finalmente, a cadeia de perguntas e respostas do LangChain é executada com esses trechos e a pergunta do usuário para gerar uma resposta.
 
-Após instalar as bibliotecas e criar o arquivo .env, você está pronto para executar o aplicativo. Abra o terminal (ou prompt de comando), navegue até o diretório onde o código do aplicativo está localizado e execute o seguinte comando:
+O código deste recurso está em `3_Chat_PDF.py`.
 
-`streamlit run FlaubertchatPDFv4BGPT_main_.py`
+## Chat com Pandas DataFrames
 
-# Passo 5 - Interagindo com o aplicativo:
+A terceira ferramenta permite que o usuário faça upload de um arquivo CSV ou Excel e converse sobre os dados em um DataFrame Pandas resultante.
 
-Após executar o comando, o aplicativo estará disponível em seu navegador web padrão. Você verá o título "Troque uma ideia com seu PDF, faça uma pergunta a respeito dele." e uma área para inserir a API key da OpenAI na barra lateral.
+O LangChain é usado para criar um agente com compreensão de comandos relacionados a Pandas e DataFrames.
 
-Insira sua API key da OpenAI na barra lateral e clique em "Enter".
-Carregue o arquivo PDF que deseja utilizar clicando no botão "Carregue aqui seu PDF".
-O texto do PDF será extraído automaticamente e dividido em pedaços (chunks) para processamento.
-Digite a pergunta que deseja fazer ao PDF na caixa de texto "Pergunte ao seu PDF".
-O aplicativo enviará sua pergunta para o modelo de perguntas e respostas da OpenAI e retornará a resposta relevante encontrada.
+O agente pode responder a perguntas sobre os dados, plotar gráficos, calcular estatísticas e mais. O StreamlitCallbackHandler exibe os pensamentos e ações do agente.
 
-## Observações:
+O código está em `4_LangChain_ChatPandas.py`.
 
+## Chat com Busca
 
-Certifique-se de que o PDF carregado contenha texto, pois o modelo de perguntas e respostas baseia-se em informações textuais.
-O aplicativo utiliza a técnica de "similarity search" para encontrar as partes relevantes do texto antes de executar a pergunta. Assim, a precisão das respostas pode depender da qualidade do texto extraído do PDF e da formulação da pergunta.
-Para encerrar a execução do aplicativo, pressione CTRL+C no terminal (ou prompt de comando) onde o aplicativo está sendo executado. Isso fechará o servidor local que o Streamlit iniciou.
-Agora você tem uma aplicação interativa que permite fazer perguntas sobre o conteúdo de um PDF usando o poderoso modelo de perguntas e respostas da OpenAI. Divirta-se explorando e interagindo com seu PDF!
+A quarta ferramenta é um chatbot com capacidade de busca. Internamente, ele usa a tarefa DuckDuckGoSearchRun do LangChain para realizar consultas no DuckDuckGo e retornar os resultados.
+
+O usuário pode fazer perguntas naturais como "Quem foi o campeão da Copa do Mundo de 2010?" e o chatbot irá procurar a resposta na web.
+
+O código está em `5_Chat_with_search.py`.
+
+# Considerações Finais
+
+Este aplicativo demonstra o poder da API da OpenAI e bibliotecas como o LangChain para a construção de agentes de conversação avançados e ferramentas de NLP.
+
+Com apenas algumas linhas de código Python e uma chave de API, é possível criar experiências incríveis como chatbots, QA de documentos, compreensão de dados e muito mais.
+
+O aplicativo completo está hospedado em https://faztudocom-openai-app.streamlit.app/ para teste ao vivo. O código-fonte está disponível no GitHub para referência e customização.
 
 Agradecemos por usar o "Trocando uma Ideia com Meu PDF". Divirta-se e boas descobertas!
 
