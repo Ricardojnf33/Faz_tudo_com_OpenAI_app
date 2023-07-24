@@ -13,8 +13,6 @@ with st.sidebar:
 
     # Links para obter a chave de API do OpenAI e visualizar o código-fonte no GitHub
     "[Obter uma chave de API do OpenAI](https://platform.openai.com/account/api-keys)"
-    "[Visualizar o código-fonte](https://github.com/streamlit/llm-examples/blob/main/pages/2_Chat_with_search.py)"
-    "[![Abrir no GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/streamlit/llm-examples?quickstart=1)"
 
 # Título do aplicativo Streamlit
 st.title("🔎 LangChain - Chat com busca")
