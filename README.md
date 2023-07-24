@@ -5,6 +5,7 @@ Este é um aplicativo desenvolvido com o framework Streamlit que permite ao usu�
 # Pré-requisitos:
 
 Python 3.x instalado na máquina.
+
 Uma API key válida da OpenAI para acessar o modelo de perguntas e respostas.
 
 # Passo 1 - Instalar as bibliotecas necessárias:
